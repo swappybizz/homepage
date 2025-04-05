@@ -1,0 +1,28 @@
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth; /* Enable native smooth scrolling */
+  /* Optional: Helps Framer Motion measure layout correctly on scroll */
+  /* overflow-x: hidden;  */
+}
+
+body {
+  background-color: #000000; /* Set base background */
+  color: #E5E7EB; /* Set base text color */
+}
+
+/* Ensure sections have IDs for scrolling */
+section {
+  padding-top: 5rem; /* Add padding equal or more than navbar height */
+  margin-top: -5rem; /* Negative margin to compensate padding for scroll position */
+}
+/* Add a dummy target for scrolling to top */
+#top {
+  display: block;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
