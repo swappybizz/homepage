@@ -6,7 +6,7 @@ import Link from 'next/link'; // For the privacy policy link
 const colors = {
   gold: '#D4AF37',
   crimson: '#A4133C',
-  lightText: '#E5E7EB',
+  lightText: '#E7EB',
   mediumText: '#9CA3AF',
   darkBg: '#0a0a0a', // Continuing the slight gradient
   inputBg: '#1F2937', // Dark blue-grey for inputs
@@ -115,7 +115,7 @@ const Contact = () => {
                 autoComplete="name"
                 value={formData.name}
                 onChange={handleChange}
-                className={`block w-full px-4 py-3 rounded-md shadow-sm bg-[${colors.inputBg}] border border-[${colors.inputBorder}] text-[${colors.lightText}] placeholder-[${colors.mediumText}] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[${colors.inputFocusBorder}] focus:border-[${colors.inputFocusBorder}] transition`}
+                className={`block w-full px-4 py-3 rounded-md shadow-sm bg-[${colors.inputBg}] border border-[${colors.inputBorder}] text-black placeholder-[${colors.mediumText}] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[${colors.inputFocusBorder}] focus:border-[${colors.inputFocusBorder}] transition`}
                 placeholder="Jane Doe"
               />
             </div>
@@ -133,7 +133,7 @@ const Contact = () => {
                 autoComplete="organization"
                 value={formData.companyName}
                 onChange={handleChange}
-                className={`block w-full px-4 py-3 rounded-md shadow-sm bg-[${colors.inputBg}] border border-[${colors.inputBorder}] text-[${colors.lightText}] placeholder-[${colors.mediumText}] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[${colors.inputFocusBorder}] focus:border-[${colors.inputFocusBorder}] transition`}
+                className={`block w-full px-4 py-3 rounded-md shadow-sm bg-[${colors.inputBg}] border border-[${colors.inputBorder}] text-black placeholder-[${colors.mediumText}] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[${colors.inputFocusBorder}] focus:border-[${colors.inputFocusBorder}] transition`}
                 placeholder="Acme Corporation"
               />
             </div>
@@ -152,7 +152,7 @@ const Contact = () => {
               autoComplete="email"
               value={formData.email}
               onChange={handleChange}
-              className={`block w-full px-4 py-3 rounded-md shadow-sm bg-[${colors.inputBg}] border border-[${colors.inputBorder}] text-[${colors.lightText}] placeholder-[${colors.mediumText}] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[${colors.inputFocusBorder}] focus:border-[${colors.inputFocusBorder}] transition`}
+              className={`block w-full px-4 py-3 rounded-md shadow-sm bg-[${colors.inputBg}] border border-[${colors.inputBorder}] text-black placeholder-[${colors.mediumText}] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[${colors.inputFocusBorder}] focus:border-[${colors.inputFocusBorder}] transition`}
               placeholder="you@example.com"
             />
           </div>
@@ -169,7 +169,7 @@ const Contact = () => {
               required
               value={formData.message}
               onChange={handleChange}
-              className={`block w-full px-4 py-3 rounded-md shadow-sm bg-[${colors.inputBg}] border border-[${colors.inputBorder}] text-[${colors.lightText}] placeholder-[${colors.mediumText}] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[${colors.inputFocusBorder}] focus:border-[${colors.inputFocusBorder}] transition`}
+              className={`block w-full px-4 py-3 rounded-md shadow-sm bg-[${colors.inputBg}] border border-[${colors.inputBorder}] text-black placeholder-[${colors.mediumText}] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[${colors.inputFocusBorder}] focus:border-[${colors.inputFocusBorder}] transition`}
               placeholder="Tell us briefly about your needs or ask any questions."
             />
           </div>
@@ -193,7 +193,7 @@ const Contact = () => {
             <motion.button
               type="submit"
               disabled={isSubmitting}
-              className={`inline-flex justify-center items-center py-3 px-8 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-[${colors.crimson}] hover:bg-opacity-85 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[${colors.crimson}] transition disabled:opacity-50 disabled:cursor-not-allowed`}
+              className={`inline-flex justify-center items-center py-3 px-8 border border-white shadow-sm text-lg font-medium rounded-md text-white bg-[${colors.crimson}] hover:bg-opacity-85 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[${colors.crimson}] transition disabled:opacity-50 disabled:cursor-not-allowed`}
               whileHover={!isSubmitting ? { scale: 1.05, filter: 'brightness(1.1)' } : {}}
               whileTap={!isSubmitting ? { scale: 0.95 } : {}}
             >

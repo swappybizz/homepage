@@ -63,7 +63,7 @@ const Clients = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex w-full items-center justify-center flex-col">
         {/* Section Title */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className={`text-lg font-semibold text-[${colors.mediumText}] tracking-wide uppercase`}>
@@ -73,7 +73,7 @@ const Clients = () => {
 
         {/* Client Logos Grid */}
         <motion.div
-          className="grid grid-cols-2 gap-y-8 gap-x-12 sm:grid-cols-2 lg:grid-cols-4 items-center justify-items-center"
+          className="flex gap-x-6 items-center justify-items-center"
           // Apply variants to the grid container for staggering
           variants={sectionVariants}
         >
