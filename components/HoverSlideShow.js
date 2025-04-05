@@ -12,7 +12,6 @@ const HoverSlideshow = ({ images, position }) => {
     if (!images || images.length === 0) {
       return; // Exit early if no images
     }
-
     // Reset index to 0 whenever the images prop changes
     // This happens when the user hovers over a different card
     setCurrentIndex(0);

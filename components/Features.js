@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import HoverSlideshow from './HoverSlideshow'; // Import the new component
+import HoverSlideshow from './HoverSlideShow'; // Import the new component
 
 // Feature data including slideshow images
 const featuresData = [
