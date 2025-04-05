@@ -65,7 +65,7 @@ const Clients = () => {
     >
       <div className="flex w-full items-center justify-center flex-col">
         {/* Section Title */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-12 md:mb-16 mt-2">
           <h2 className={`text-lg font-semibold text-[${colors.mediumText}] tracking-wide uppercase`}>
             Trusted By Leading Innovators
           </h2>
@@ -73,14 +73,14 @@ const Clients = () => {
 
         {/* Client Logos Grid */}
         <motion.div
-          className="flex gap-x-6 items-center justify-items-center"
+          className="flex gap-x-6 items-around w-full justify-items-center"
           // Apply variants to the grid container for staggering
           variants={sectionVariants}
         >
           {clientsData.map((client) => (
             <motion.div
               key={client.id}
-              className="flex justify-center items-center p-4"
+              className="flex justify-center items-center p-4 w-full "
               variants={logoVariants}
               // Variants applied per item by inheriting from parent with staggerChildren
               // initial="hidden" // Not needed if parent has variants + stagger
@@ -93,8 +93,8 @@ const Clients = () => {
                 alt={`${client.name} Logo`}
                 // You need to define appropriate width/height for layout spacing
                 // These values might need adjustment based on the actual SVG aspect ratios
-                width={160} // Example width
-                height={50}  // Example height
+                width={260} // Example width
+                height={150}  // Example height
                 objectFit="contain" // Ensures the entire logo fits
                 className="filter grayscale brightness-150 transition-all duration-200" // Initial muted style
               />
