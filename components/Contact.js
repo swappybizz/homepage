@@ -1,20 +1,19 @@
 // components/Contact.js
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link'; // For the privacy policy link
+// Removed Link as it's no longer needed for the privacy policy link tied to the form
+// Removed useState as form state is no longer needed
 
 const colors = {
   gold: '#D4AF37',
   crimson: '#A4133C',
-  lightText: '#E7EB',
+  lightText: '#E7EB', // Using a slightly less bright white for better readability
   mediumText: '#9CA3AF',
-  darkBg: '#0a0a0a', // Continuing the slight gradient
-  inputBg: '#1F2937', // Dark blue-grey for inputs
-  inputBorder: '#4B5563', // Muted border
-  inputFocusBorder: '#D4AF37', // Gold focus
+  darkBg: '#0a0a0a',
+  // Input related colors can be removed or kept for future use if needed
 };
 
-// Animation Variants
+// Animation Variants (kept the same)
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
@@ -29,53 +28,44 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
 };
 
+// Team Member Data (using the provided details)
+// Note: Placeholders used where data was incomplete in the request.
+//       'Phone' for Swapnil is displayed literally as requested.
+const teamMembers = [
+  {
+    name: 'Terje Bjørkevoll',
+    role: 'CEO',
+    phone: '+47-90015544', // Displaying literally as provided
+    email: 'terje@digitalsafety.no'
+  },
+  {
+    name: 'Swapnil Kumar',
+    role: 'IT',
+    phone: '+47-40565790', // Displaying literally as provided
+    email: 'swapnil@digitalsafety.no'
+  },
+  {
+    name: 'Ole Petter',
+    role: 'Manager', // Placeholder / Incomplete
+    phone: '+47-90225574', // Placeholder / Incomplete
+    email: 'ole@digitalsafety.no' // Placeholder / Incomplete
+  },
+  {
+    name: 'Teddy Broadhurst',
+    role: 'Manager', // Placeholder / Incomplete
+    phone: "+47-91395462", // No phone provided
+    email: 'teddy@digitalsafety.no' // Placeholder / Incomplete
+  },
+];
+
+
 const Contact = () => {
-  // Basic state for form inputs
-  const [formData, setFormData] = useState({
-    name: '',
-    companyName: '',
-    email: '',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  // Placeholder submit handler
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-    console.log("Form Data Submitted:", formData);
-
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    // Simulate success/error
-    const success = Math.random() > 0.3; // Simulate success mostly
-    if (success) {
-        setSubmitStatus('success');
-        setFormData({ name: '', companyName: '', email: '', message: '' }); // Clear form
-    } else {
-        setSubmitStatus('error');
-    }
-
-    setIsSubmitting(false);
-    // Hide status message after a few seconds
-     setTimeout(() => setSubmitStatus(null), 5000);
-  };
+  // Removed form state and handlers
 
   return (
     <motion.section
       id="contact"
-      className="bg-gradient-to-b from-[#0a0a0a] to-black py-16 sm:py-24" // Gradient continues, ends in black for footer transition
+      className="bg-gradient-to-b from-[#0a0a0a] to-black py-16 sm:py-24" // Gradient continues
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -84,130 +74,59 @@ const Contact = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <motion.div variants={itemVariants} className="text-center mb-12 md:mb-16">
-          <h2 className={`text-lg font-semibold text-[${colors.crimson}] tracking-wide uppercase`}>
+          <h2 className="text-lg font-semibold text-[#A4133C] tracking-wide uppercase"> {/* Crimson */}
             Get Started
           </h2>
-          <p className={`mt-2 text-4xl font-extrabold text-[${colors.gold}] sm:text-5xl tracking-tight`}>
-            Request a Demo
+          <p className="mt-2 text-4xl font-extrabold text-[#D4AF37] sm:text-5xl tracking-tight"> {/* Gold */}
+            Contact Our Team
           </p>
-          <p className={`mt-5 max-w-xl mx-auto text-xl text-[${colors.mediumText}] sm:text-2xl`}>
-            Interested in seeing Cold Eye Review in action? Fill out the form below or email us directly.
+          <p className="mt-5 max-w-xl mx-auto text-xl text-[#9CA3AF] sm:text-2xl"> {/* Medium Text */}
+            Reach out directly to a member of our team for inquiries or to discuss your needs.
           </p>
         </motion.div>
 
-        {/* Contact Form */}
-        <motion.form
-            variants={itemVariants}
-            onSubmit={handleSubmit}
-            className="space-y-6"
+        {/* Team Contact Grid */}
+        <motion.div
+          variants={itemVariants}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
         >
-          <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
-            {/* Name Field */}
-            <div>
-              <label htmlFor="name" className={`block text-sm font-medium text-[${colors.lightText}] mb-1`}>
-                Full Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                required
-                autoComplete="name"
-                value={formData.name}
-                onChange={handleChange}
-                className={`block w-full px-4 py-3 rounded-md shadow-sm bg-[${colors.inputBg}] border border-[${colors.inputBorder}] text-black placeholder-[${colors.mediumText}] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[${colors.inputFocusBorder}] focus:border-[${colors.inputFocusBorder}] transition`}
-                placeholder="Jane Doe"
-              />
-            </div>
-
-            {/* Company Name Field */}
-            <div>
-              <label htmlFor="companyName" className={`block text-sm font-medium text-[${colors.lightText}] mb-1`}>
-                Company Name
-              </label>
-              <input
-                type="text"
-                name="companyName"
-                id="companyName"
-                required
-                autoComplete="organization"
-                value={formData.companyName}
-                onChange={handleChange}
-                className={`block w-full px-4 py-3 rounded-md shadow-sm bg-[${colors.inputBg}] border border-[${colors.inputBorder}] text-black placeholder-[${colors.mediumText}] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[${colors.inputFocusBorder}] focus:border-[${colors.inputFocusBorder}] transition`}
-                placeholder="Acme Corporation"
-              />
-            </div>
-          </div>
-
-          {/* Email Field */}
-          <div>
-            <label htmlFor="email" className={`block text-sm font-medium text-[${colors.lightText}] mb-1`}>
-              Company Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              required
-              autoComplete="email"
-              value={formData.email}
-              onChange={handleChange}
-              className={`block w-full px-4 py-3 rounded-md shadow-sm bg-[${colors.inputBg}] border border-[${colors.inputBorder}] text-black placeholder-[${colors.mediumText}] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[${colors.inputFocusBorder}] focus:border-[${colors.inputFocusBorder}] transition`}
-              placeholder="you@example.com"
-            />
-          </div>
-
-          {/* Message Field */}
-          <div>
-            <label htmlFor="message" className={`block text-sm font-medium text-[${colors.lightText}] mb-1`}>
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows={4}
-              required
-              value={formData.message}
-              onChange={handleChange}
-              className={`block w-full px-4 py-3 rounded-md shadow-sm bg-[${colors.inputBg}] border border-[${colors.inputBorder}] text-black placeholder-[${colors.mediumText}] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[${colors.inputFocusBorder}] focus:border-[${colors.inputFocusBorder}] transition`}
-              placeholder="Tell us briefly about your needs or ask any questions."
-            />
-          </div>
-
-          {/* Privacy Note */}
-           <div className="text-sm text-center text-[${colors.mediumText}]">
-             By submitting this form, you agree to our{' '}
-             <Link href="/privacy" legacyBehavior>
-                <a className={`font-medium text-[${colors.gold}] hover:text-opacity-80 underline transition`}>Privacy Policy</a>
-             </Link>.
-           </div>
-
-          {/* Submit Button & Status */}
-          <div className="text-center">
-             {submitStatus === 'success' && (
-                <motion.p initial={{opacity: 0}} animate={{opacity: 1}} className="mb-4 text-green-400">Message sent successfully! We'll be in touch soon.</motion.p>
-             )}
-             {submitStatus === 'error' && (
-                <motion.p initial={{opacity: 0}} animate={{opacity: 1}} className="mb-4 text-red-400">Something went wrong. Please try again or email us.</motion.p>
-             )}
-            <motion.button
-              type="submit"
-              disabled={isSubmitting}
-              className={`inline-flex justify-center items-center py-3 px-8 border border-white shadow-sm text-lg font-medium rounded-md text-white bg-[${colors.crimson}] hover:bg-opacity-85 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[${colors.crimson}] transition disabled:opacity-50 disabled:cursor-not-allowed`}
-              whileHover={!isSubmitting ? { scale: 1.05, filter: 'brightness(1.1)' } : {}}
-              whileTap={!isSubmitting ? { scale: 0.95 } : {}}
+          {teamMembers.map((member, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants} // Apply item animation to each card
+              className="text-center md:text-left p-4 rounded-lg" // Added padding and rounded corners, can add bg if desired
             >
-              {isSubmitting ? 'Sending...' : 'Send Request'}
-            </motion.button>
-          </div>
-        </motion.form>
+              <h3 className="text-xl font-semibold text-[#ff0055bb]"> {/* Light Text */}
+                {member.name}
+              </h3>
+              <p className="text-md text-[#9CA3AF] mt-1"> {/* Medium Text */}
+                {member.role}
+              </p>
+              {member.phone && ( // Conditionally render phone if available
+                <p className="text-md text-[#9CA3AF] mt-2"> {/* Medium Text */}
+                  Phone: {member.phone}
+                </p>
+              )}
+              {member.email && ( // Conditionally render email if available
+                <p className="text-md text-[#9CA3AF] mt-1"> {/* Medium Text */}
+                  Email: <a
+                            href={`mailto:${member.email}`}
+                            className="font-medium text-[#D4AF37] hover:text-opacity-80 transition underline" /* Gold Link */
+                         >
+                            {member.email}
+                         </a>
+                </p>
+              )}
+               {/* Note for incomplete entries */}
+               {(member.email === '...' || member.email === 'teddy@digital...') && (
+                 <p className="text-xs text-red-400 mt-2 italic">(Contact details incomplete)</p>
+               )}
+            </motion.div>
+          ))}
+        </motion.div>
 
-         {/* Alternative Contact */}
-         <motion.div variants={itemVariants} className="mt-12 text-center">
-            <p className={`text-lg text-[${colors.mediumText}]`}>
-                Or email us directly at: <a href="mailto:contact@digitalsafety.no" className={`font-medium text-[${colors.gold}] hover:text-opacity-80 transition`}>contact@digitalsafety.no</a>
-            </p>
-         </motion.div>
+        {/* Removed Form and Submit Logic */}
+        {/* Removed Alternative Contact Email */}
 
       </div>
     </motion.section>
