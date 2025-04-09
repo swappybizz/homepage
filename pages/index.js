@@ -27,7 +27,7 @@ export default function Home() {
       <Footer />
 
       {/* Watermark Overlay */}
-      <div
+      {/* <div
         style={{
           position: 'fixed', // Keep it fixed relative to the viewport
           top: 0,
@@ -55,7 +55,7 @@ export default function Home() {
         >
           Awaiting Payment
         </span>
-      </div>
+      </div> */}
     </div>
   );
 }
