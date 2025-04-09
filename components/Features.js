@@ -8,73 +8,52 @@ import HoverSlideshow from './HoverSlideShow'; // Import the new component
 const featuresData = [
   {
     id: 1,
-    title: 'Secure & Encrypted',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo Eaque Quisquam quod.',
-    imageUrl: 'https://picsum.photos/seed/security/400/300',
+    title: 'Secure & Local',
+    description: 'There is nothing more secure than a local solution. No data is sent to the cloud. If you can provide your own AI model, we can run completely on your own infrastructure.',
+    imageUrl: 'https://i.ibb.co/B2sPv8kt/Chat-GPT-Image-Apr-9-2025-11-25-36-AM.png',
     slideshowImages: [
-      'https://picsum.photos/seed/sec1/150/100',
-      'https://picsum.photos/seed/sec2/150/100',
-      'https://picsum.photos/seed/sec3/150/100',
+      "https://i.ibb.co/d4GK3szV/pexels-photo-8438918.webp",
+      "https://i.ibb.co/rKbPNC5P/pexels-ron-lach-9783812-1.jpg",
+      "https://i.ibb.co/QjK0Bp8X/pexels-cottonbro-5474035-1.jpg"
     ],
     imageAlt: 'Abstract image representing security'
   },
   {
     id: 2,
     title: 'Cross-Platform Access',
-    description: 'Adipisci tempore vitae eius quia quas fuga rem, necessitatibus cumque. Dolor.',
-    imageUrl: 'https://picsum.photos/seed/devices/400/300',
+    description: 'Access your data from any device, anywhere. Our app is designed to work seamlessly across all platforms.',
+    imageUrl: 'https://i.ibb.co/k25LJDP1/Chat-GPT-Image-Apr-9-2025-11-43-22-AM.png',
     slideshowImages: [
-      'https://picsum.photos/seed/dev1/150/100',
-      'https://picsum.photos/seed/dev2/150/100',
-      'https://picsum.photos/seed/dev3/150/100',
+      'https://i.ibb.co/1W307xV/pexels-pixabay-39284-1.jpg',
+      'https://i.ibb.co/0jwbJ43D/pexels-jakubzerdzicki-30909284.jpg',
+      "https://i.ibb.co/GfBS4wrj/pexels-fotios-photos-1092671-1.jpg"
     ],
-    imageAlt: 'Abstract image representing multiple devices'
+    imageAlt: ' image representing multiple devices'
   },
   {
     id: 3,
     title: 'AI-Powered Analysis',
-    description: 'Laboriosam, dignissimos consequatur et minus distinctio reiciendis quasi commodi.',
-    imageUrl: 'https://picsum.photos/seed/ai/400/300',
+    description: 'Powerful AI for intelligent feature and HSE detection, from Audio-Visual input to Text Reports in just few clicks.', 
+    imageUrl: 'https://i.ibb.co/YBYS20Vk/istockphoto-1432457969-612x612.jpg',
      slideshowImages: [
-      'https://picsum.photos/seed/ai1/150/100',
-      'https://picsum.photos/seed/ai2/150/100',
+      '',
+      'https://i.ibb.co/TM4N7jtD/Chat-GPT-Image-Apr-9-2025-11-54-12-AM-1.png',
       'https://picsum.photos/seed/ai3/150/100',
+      "https://i.ibb.co/8D5XgT79/pexels-tara-winstead-8849295-1.jpg"
     ],
      imageAlt: 'Abstract image representing artificial intelligence'
   },
-    {
+  {
     id: 4,
-    title: 'Real-time Collaboration',
-    description: 'Voluptates molestiae nemo esse nobis, provident quae doloribus natus placeat?',
-    imageUrl: 'https://picsum.photos/seed/collaboration/400/300',
-     slideshowImages: [
-      'https://picsum.photos/seed/collab1/150/100',
-      'https://picsum.photos/seed/collab2/150/100',
-      'https://picsum.photos/seed/collab3/150/100',
-    ],
-     imageAlt: 'Abstract image representing collaboration'
-  },
-  {
-    id: 5,
-    title: 'Comprehensive Audit Trails',
-    description: 'Facere error delectus obcaecati ipsam temporibus possimus laudantium optio.',
-    imageUrl: 'https://picsum.photos/seed/audittrail/400/300',
-    slideshowImages: [
-      'https://picsum.photos/seed/audit1/150/100',
-      'https://picsum.photos/seed/audit2/150/100',
-      'https://picsum.photos/seed/audit3/150/100',
-    ],
-     imageAlt: 'Abstract image representing data logs or trails'
-  },
-  {
-    id: 6,
     title: 'Industry Specific Audits',
-    description: 'Quibusdam commodi quos repellat distinctio? Mollitia facere ipsa quia quisquam.',
-    imageUrl: 'https://picsum.photos/seed/industry/400/300',
+    description: 'Trained from HSE and Industry specific data, our AI is ready to assist you in your audits.',
+    imageUrl: "https://i.ibb.co/PGwTKHPp/pexels-photo-257700.jpg",
     slideshowImages: [
-      'https://picsum.photos/seed/ind1/150/100',
-      'https://picsum.photos/seed/ind2/150/100',
-      'https://picsum.photos/seed/ind3/150/100',
+      "https://i.ibb.co/35MFbxs3/free-photo-of-forklift-and-containers-at-a-transshipment-port.jpg",
+"https://i.ibb.co/m1T12Gd/pexels-photo-3375371.jpg",
+"https://i.ibb.co/JFddjJ9d/pexels-photo-12583030.jpg",
+"https://i.ibb.co/jPL5ntWY/pexels-photo-1249611.jpg",
+
     ],
      imageAlt: 'Abstract image representing various industries'
   }
