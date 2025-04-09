@@ -16,7 +16,7 @@ const featuresData = [
       "https://i.ibb.co/rKbPNC5P/pexels-ron-lach-9783812-1.jpg",
       "https://i.ibb.co/QjK0Bp8X/pexels-cottonbro-5474035-1.jpg"
     ],
-    imageAlt: 'Abstract image representing security'
+    imageAlt: 'image representing security'
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const featuresData = [
       'https://i.ibb.co/0jwbJ43D/pexels-jakubzerdzicki-30909284.jpg',
       "https://i.ibb.co/GfBS4wrj/pexels-fotios-photos-1092671-1.jpg"
     ],
-    imageAlt: ' image representing multiple devices'
+    imageAlt: 'image representing multiple devices'
   },
   {
     id: 3,
@@ -41,7 +41,7 @@ const featuresData = [
       'https://picsum.photos/seed/ai3/150/100',
       "https://i.ibb.co/8D5XgT79/pexels-tara-winstead-8849295-1.jpg"
     ],
-     imageAlt: 'Abstract image representing artificial intelligence'
+     imageAlt: 'image representing artificial intelligence'
   },
   {
     id: 4,
@@ -55,7 +55,7 @@ const featuresData = [
 "https://i.ibb.co/jPL5ntWY/pexels-photo-1249611.jpg",
 
     ],
-     imageAlt: 'Abstract image representing various industries'
+     imageAlt: 'image representing various industries'
   }
 ];
 
