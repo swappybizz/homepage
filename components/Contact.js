@@ -40,7 +40,7 @@ const teamMembers = [
   },
   {
     name: 'Swapnil Kumar',
-    role: 'IT',
+    role: 'Technology',
     phone: '+47-40565790', // Displaying literally as provided
     email: 'swapnil@digitalsafety.no'
   },
